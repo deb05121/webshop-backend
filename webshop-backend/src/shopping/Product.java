@@ -9,4 +9,8 @@ public class Product {
     public void stockDecrease(){
         stock--;
     }
+    public void stockIncrease(){
+        stock++;
+    }
+
 }

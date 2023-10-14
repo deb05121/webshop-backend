@@ -17,18 +17,19 @@ public class ShoppingCart {
         boolean ok = false;
         if (p != null) {
             products.add(p);
+            p.stockDecrease();
             ok = true;
         }
         return ok;
     }
 
     public boolean removeProduct(Product p) {
-
         boolean ok = false;
         int pieces = p.getStock();
         if (p != null) {
             if (pieces > 0) {
-                p.stockDecrease();
+                products.remove(p);
+                p.stockIncrease();
                 ok = true;
             }
         }
