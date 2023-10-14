@@ -1,24 +1,30 @@
 package shopping;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
-    private ArrayList<Product> products;
+    private List<Product> products;
     private int totalPrice;
     private User owner;
 
-    public ShoppingCart(ArrayList<Product> products, int totalPrice, User owner) {
+    public ShoppingCart(List<Product> products, int totalPrice, User owner) {
         this.products = products;
         this.totalPrice = totalPrice;
         this.owner = owner;
     }
 
     public void addProduct(Product p) {
-        products.add(p);
+        if (p != null) {
+            products.add(p);
+        }
     }
 
-    public void removeProduct(Product p){
-        products.remove(p);
+    public void removeProduct(Product p) {
+        int pieces = p.getStock();
+        if (pieces > 0) {
+            products.remove(p);
+
+        }
     }
 
 }
