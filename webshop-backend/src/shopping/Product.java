@@ -6,10 +6,10 @@ public class Product {
     public int getStock() {
         return stock;
     }
-    public void stockDecrease(){
+    public void decreaseStock(){
         stock--;
     }
-    public void stockIncrease(){
+    public void increaseStock(){
         stock++;
     }
 

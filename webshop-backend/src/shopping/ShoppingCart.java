@@ -17,7 +17,7 @@ public class ShoppingCart {
         boolean ok = false;
         if (p != null) {
             products.add(p);
-            p.stockDecrease();
+            p.decreaseStock();
             ok = true;
         }
         return ok;
@@ -29,7 +29,7 @@ public class ShoppingCart {
         if (p != null) {
             if (pieces > 0) {
                 products.remove(p);
-                p.stockIncrease();
+                p.increaseStock();
                 ok = true;
             }
         }
