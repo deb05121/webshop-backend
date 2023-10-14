@@ -19,11 +19,14 @@ public class ShoppingCart {
         }
     }
 
-    public void removeProduct(Product p) {
+    public boolean removeProduct(Product p) {
+        boolean ok = false;
         int pieces = p.getStock();
         if (pieces > 0) {
             p.stockDecrease();
+            ok = true;
         }
+        return ok;
     }
 
 }
