@@ -26,9 +26,11 @@ public class ShoppingCart {
 
         boolean ok = false;
         int pieces = p.getStock();
-        if (pieces > 0) {
-            p.stockDecrease();
-            ok = true;
+        if (p != null) {
+            if (pieces > 0) {
+                p.stockDecrease();
+                ok = true;
+            }
         }
         return ok;
     }
