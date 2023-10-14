@@ -13,13 +13,17 @@ public class ShoppingCart {
         this.owner = owner;
     }
 
-    public void addProduct(Product p) {
+    public boolean addProduct(Product p) {
+        boolean ok = false;
         if (p != null) {
             products.add(p);
+            ok = true;
         }
+        return ok;
     }
 
     public boolean removeProduct(Product p) {
+
         boolean ok = false;
         int pieces = p.getStock();
         if (pieces > 0) {
