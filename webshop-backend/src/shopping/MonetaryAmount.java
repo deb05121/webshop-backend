@@ -1,3 +1,5 @@
+package shopping;
+
 import java.util.Currency;
 
 public class MonetaryAmount {

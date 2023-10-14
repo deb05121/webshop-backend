@@ -1,3 +1,5 @@
+package shopping;
+
 public class Validator {
 
     private Validator() {

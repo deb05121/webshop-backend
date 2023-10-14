@@ -1,5 +1,8 @@
+package shopping;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import shopping.Validator;
 
 public class ValidatorTest {
 
