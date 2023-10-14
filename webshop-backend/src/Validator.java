@@ -1,5 +1,9 @@
 public class Validator {
 
+    private Validator() {
+
+    }
+
     public static boolean isNameValid(String name) {
         return name.matches("[a-z ]+$");
 
