@@ -12,6 +12,7 @@ public class User {
 
     public User(String name, Address address, int age, ShoppingCart shoppingCart, MonetaryAmount balance) {
         this.name = name;
+        this.age = age;
         this.address = address;
         this.shoppingCart = shoppingCart;
         this.balance = balance;
