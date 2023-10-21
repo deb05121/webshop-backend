@@ -1,5 +1,5 @@
 package shopping;
 
 public enum Country {
- Hungary, UK, Germany
+ HUNGARY, UK, GERMANY
 }

@@ -4,9 +4,7 @@ public class User {
 
     private String name;
     private Address address;
-
     private int age;
-
     private ShoppingCart shoppingCart;
     private MonetaryAmount balance;
 
@@ -17,5 +15,4 @@ public class User {
         this.shoppingCart = shoppingCart;
         this.balance = balance;
     }
-
 }
