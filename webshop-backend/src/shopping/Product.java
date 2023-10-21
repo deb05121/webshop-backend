@@ -2,9 +2,9 @@ package shopping;
 
 public class Product {
     private static long idCounter = 0;
-    private long id;
-    private String name;
-    private MonetaryAmount price;
+    private final long id;
+    private final String name;
+    private final MonetaryAmount price;
     private int stock;
 
     public Product(String name, MonetaryAmount price, int stock) {

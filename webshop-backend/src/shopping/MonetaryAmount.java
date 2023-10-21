@@ -3,10 +3,10 @@ package shopping;
 import java.util.Currency;
 
 public class MonetaryAmount {
-    private int amount;
-    private Currency currency;
+    private final int amount;
+    private final ShopCurrency currency;
 
-    public MonetaryAmount(int amount, Currency currency) {
+    public MonetaryAmount(int amount, ShopCurrency currency) {
         this.amount = amount;
         this.currency = currency;
     }
@@ -15,7 +15,7 @@ public class MonetaryAmount {
         return amount;
     }
 
-    public Currency getCurrency() {
+    public ShopCurrency getCurrency() {
         return currency;
     }
 }
