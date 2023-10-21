@@ -1,9 +1,7 @@
 package shopping;
 
-import java.util.Currency;
-
 public class MonetaryAmount {
-    private final int amount;
+    private int amount;
     private final ShopCurrency currency;
 
     public MonetaryAmount(int amount, ShopCurrency currency) {
@@ -13,6 +11,10 @@ public class MonetaryAmount {
 
     public int getAmount() {
         return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public ShopCurrency getCurrency() {
