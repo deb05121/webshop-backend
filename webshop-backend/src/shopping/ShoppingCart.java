@@ -23,8 +23,11 @@ public class ShoppingCart {
     public boolean addProduct(Product p) {
         boolean ok = false;
         if (p != null) {
-            products.add(p);
-            p.decreaseStock();
+            //nem lehet 0 a stock, mert abból nem tudok levonni darabszámot
+            if(p.getStock()!=0){
+                products.add(p);
+                p.decreaseStock();
+            }
             ok = true;
         }
         return ok;
@@ -35,8 +38,12 @@ public class ShoppingCart {
         int pieces = p.getStock();
         if (p != null) {
             if (pieces > 0) {
-                products.remove(p);
-                p.increaseStock();
+
+                //nem lehet -1 a kosár tartalma
+                if(products.contains(p)){
+                    products.remove(p);
+                    p.increaseStock();
+                }
                 ok = true;
             }
         }
