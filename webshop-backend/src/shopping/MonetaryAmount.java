@@ -20,4 +20,9 @@ public class MonetaryAmount {
     public ShopCurrency getCurrency() {
         return currency;
     }
+
+    @Override
+    public String toString() {
+        return currency + String.valueOf(amount);
+    }
 }
