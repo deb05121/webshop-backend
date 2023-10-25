@@ -14,7 +14,7 @@ public class ValidatorTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Wrong prod", "Wr Pr"})
+    @ValueSource(strings = {"Wrong prod", "Wr Pr", "Bob@", "$", ".scr", ".value", "=true", "<script>", "</script>"})
     void isNameValidatorFalse(String productName) {
         Assertions.assertFalse(nameValidator.isValid(productName));
     }
@@ -56,7 +56,7 @@ public class ValidatorTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"bp", "debrecen", "budaPest"})
+    @ValueSource(strings = {"bp", "debrecen", "budaPest", "Bob@", "$", ".scr", ".value", "=true", "<script>", "</script>"})
     void isCityValidatorFalse(String city) {
         Assertions.assertFalse(cityValidator.isValid(city));
     }

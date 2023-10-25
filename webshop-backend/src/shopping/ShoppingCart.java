@@ -27,8 +27,8 @@ public class ShoppingCart {
             if(p.getStock()!=0){
                 products.add(p);
                 p.decreaseStock();
+                ok = true;
             }
-            ok = true;
         }
         return ok;
     }
@@ -43,8 +43,8 @@ public class ShoppingCart {
                 if(products.contains(p)){
                     products.remove(p);
                     p.increaseStock();
+                    ok = true;
                 }
-                ok = true;
             }
         }
         return ok;
