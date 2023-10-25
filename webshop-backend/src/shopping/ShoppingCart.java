@@ -4,12 +4,16 @@ import java.util.List;
 
 public class ShoppingCart {
     private List<Product> products;
-    
+
     private User owner;
 
     public ShoppingCart(List<Product> products, User owner) {
         this.products = products;
         this.owner = owner;
+    }
+
+    public void setProductListEmpty() {
+        products.clear();
     }
 
     public List<Product> getProducts() {
@@ -24,7 +28,7 @@ public class ShoppingCart {
         boolean ok = false;
         if (p != null) {
             //nem lehet 0 a stock, mert abból nem tudok levonni darabszámot
-            if(p.getStock()!=0){
+            if (p.getStock() != 0) {
                 products.add(p);
                 p.decreaseStock();
                 ok = true;
@@ -40,7 +44,7 @@ public class ShoppingCart {
             if (pieces > 0) {
 
                 //nem lehet -1 a kosár tartalma
-                if(products.contains(p)){
+                if (products.contains(p)) {
                     products.remove(p);
                     p.increaseStock();
                     ok = true;
