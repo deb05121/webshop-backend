@@ -55,4 +55,8 @@ public class User {
         this.shoppingCart = shoppingCart;
         this.balance = balance;
     }
+
+    public User(){
+
+    }
 }

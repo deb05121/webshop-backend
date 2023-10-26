@@ -11,7 +11,7 @@ public class PayService {
         if (hasSufficientBalance(shoppingCart.getOwner(), shoppingCart)) {
             shoppingCart.getOwner().setBalance(getNewBalance(shoppingCart));
             getShoppingList(shoppingCart);
-            shoppingCart = setShoppingCartEmpty(shoppingCart);
+            shoppingCart.getProducts().clear();
         } else {
             System.err.println("User has insufficient balance!");
         }
@@ -23,11 +23,6 @@ public class PayService {
         for (Product product : shoppingCart.getProducts()) {
             System.out.println(product);
         }
-    }
-
-    private static ShoppingCart setShoppingCartEmpty(ShoppingCart shoppingCart) {
-        List<Product> products = new ArrayList<>();
-        return new ShoppingCart(products, shoppingCart.getOwner());
     }
 
     private static MonetaryAmount getNewBalance(ShoppingCart shoppingCart) {
