@@ -19,4 +19,8 @@ public class Validator {
         return stock >= 0;
     }
 
+    public static boolean isCityValid(String city){
+        return city.matches("^[A-Z][a-zA-Z -]*");
+    }
+
 }
