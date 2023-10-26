@@ -1,9 +1,10 @@
 package shopping;
 
-public class PriceValidator extends Validator<Integer>{
+public class PriceValidator extends Validator<MonetaryAmount>{
 
     @Override
-    boolean isValid(Integer price) {
-        return price > 0;
+    boolean isValid(MonetaryAmount amount) {
+
+        return amount.getAmount() > 0;
     }
 }

@@ -1,6 +1,7 @@
 package shopping;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,18 +20,17 @@ public class ValidatorTest {
         Assertions.assertFalse(nameValidator.isValid(productName));
     }
 
-    Validator<Integer> priceValidator = new PriceValidator();
+    PriceValidator priceValidator = new PriceValidator();
+    MonetaryAmount monetaryAmountA = new MonetaryAmount(234, ShopCurrency.EUR);
 
-    @ParameterizedTest
-    @ValueSource(ints = {234, 1234, 98765})
-    void isPriceValidatorTrue(Integer price) {
-        Assertions.assertTrue(priceValidator.isValid(price));
+    @Test
+    void isPriceValidatorTrue() {
+        Assertions.assertTrue(priceValidator.isValid(monetaryAmountA));
     }
-
-    @ParameterizedTest
-    @ValueSource(ints = {-1, -234, -34567})
-    void isPriceValidatorFalse(Integer price) {
-        Assertions.assertFalse(priceValidator.isValid(price));
+    MonetaryAmount monetaryAmountB = new MonetaryAmount(-234, ShopCurrency.EUR);
+    @Test
+    void isPriceValidatorFalse() {
+        Assertions.assertFalse(priceValidator.isValid(monetaryAmountB));
     }
 
     Validator<Integer> stockValidator = new StockValidator();
