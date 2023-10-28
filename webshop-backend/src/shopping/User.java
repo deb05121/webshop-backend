@@ -53,10 +53,10 @@ public class User {
         this.age = age;
         this.address = address;
         this.shoppingCart = shoppingCart;
-        this.balance = balance;
+        this.balance = new MonetaryAmount(0, ShopCurrency.GBP);
     }
 
-    public User(){
+    public User() {
 
     }
 }
