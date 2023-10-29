@@ -41,4 +41,9 @@ public class Product {
     public void decreaseStock(){
         stock--;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + " product name: " + name + " price: " + price;
+    }
 }
