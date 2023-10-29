@@ -5,11 +5,23 @@ import java.util.List;
 public class ShoppingCart {
     private List<Product> products;
 
-    private User owner;
+    //private User owner;
 
-    public ShoppingCart(List<Product> products, User owner) {
+   /* public ShoppingCart(List<Product> products, User owner) {
         this.products = products;
         this.owner = owner;
+    }*/
+   public ShoppingCart(List<Product> products) {
+       this.products = products;
+
+   }
+
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (Product p : products) {
+            totalPrice += p.getPrice().getAmount();
+        }
+        return totalPrice;
     }
 
     public void setProductListEmpty() {
@@ -20,9 +32,9 @@ public class ShoppingCart {
         return products;
     }
 
-    public User getOwner() {
+   /* public User getOwner() {
         return owner;
-    }
+    }*/
 
     public boolean addProduct(Product p) {
         boolean ok = false;
